@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project 1: Post Card Creator</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    
+
+</head>
+    
+<!-- Init Function Initializes the canvas -->  
+<body onload="init();">
+    <div id="main" class="container">
+        
+        <!-- Button Spacing and My button classes used to create better looking buttons and spacing --> 
+        <div class="row">
+          <div id = "test1" class="col-xs-12 col-sm-4 col-md-8">
+              
+              <div class="buttonSpacing">
+				
+                <!-- Resets the canvas by reinitalizing the canvas -->   
+                <button onclick="init();" class="myButton">Reset Canvas</button>
+                  
+                  <!-- Shows directions further down on how to use the canvas --> 
+                 <button class="myButton" onclick="ShowDirections();">Directions</button>
+				</div>
+				
+
+			  </div>
+              
+            <!-- Code taken from the starter code, with smaller width scaling on the preview image -->   
+            <div id="img" class="form-group">
+                        <label class="sr-only" for="image">Original Image</label>
+                        <img id="image" name="image" src="/" width="200px">
+                        <input class="myButton"type="file" id="upload" name="upload" accept="image/*">
+                    </div>
+                          
+            <!-- Adds an image to the canvas -->   
+            <div class="buttonSpacing"><button onclick="addImg();" class="myButton">Add an image to the canvas</button></div>
+              
+                
+            <!-- Allows the user to choose font type -->   
+            <div class="buttonSpacing"><select class="myButton" id="fontType" name="font">
+                <option class="myButton" value="Georgia">Georgia</option>
+                <option class="myButton" value="Palatino Linotype">Palatino Linotype</option>
+                <option class="myButton" value="Times New Roman">Times New Roman</option>
+                <option class="myButton" value="Arial">Arial</option>
+                <option class="myButton" value="Arial Black">Arial Black</option>
+                <option class="myButton" value="Comic Sans MS">Comic Sans MS</option>
+                <option class="myButton" value="Impact">Impact</option>
+                <option class="myButton" value="Lucida Sans Unicode">Lucida Sans Unicode</option>
+                <option class="myButton" value="Tahoma">Tahoma</option>
+                <option class="myButton" value="Trebuchet MS">Trebuchet MS</option>
+                <option class="myButton" value="Tahoma">Tahoma</option>
+                <option class="myButton" value="Verdana">Verdana</option>
+                <option class="myButton" value="Courier New">Courier New</option>
+                <option class="myButton" value="Lucida Console">Lucida Console</option>
+              </select></div>
+              
+            <!-- Allows the user to change font size --> 
+            <div class="buttonSpacing"><input class="myButton" type="text" id="fontSize" value="Font Size"></input></div>
+            
+            <!-- Allows the user to change the color of the added text --> 
+            <div class="buttonSpacing"><input class="myButton" type="text" id="formColor" value="Enter a color or hex value"></input></div>
+        
+            <!-- Allws the user to choose between a few text decorations: Bold, Italics --> 
+            <div class="buttonSpacing"><select class="myButton" id="textChange" name="textChange">    
+            <option class="myButton" value = "bold" >Bold</option>
+            <option class="myButton" value = "italic" >Italic</option>
+            <option class="myButton" value = "">No Change</option>
+            </select></div> 
+            
+            <!-- After the user has filled all the other parameters, adds text to the canvas.  
+            if the parameter havent been filled it will default to black 12pt text --> 
+            <div class="buttonSpacing"><button onclick="addText();" class="myButton">Add text to Canvas</button></div>
+        
+            <!-- Saves the canvas into an image below, allows right clicking and saving as image  --> 
+            <div class="buttonSpacing"><button onclick="saveCanvas();" class="myButton">Save Canvas</button></div>
+                      
+            
+    </div>
+            <!-- The canvas object, where the text and images are placed --> 
+          <div class="col-xs-6 col-md-8">
+              <canvas id="canvas" width="750" height="400" style="border:1px solid #000000;"></canvas>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+<br/>
+
+<!-- Directions Explaining to the user how to use the canvas and canvas functions, defaulted to display: none --> 
+<div id="Directions">
+    <ul>
+    <li><h2>To Begin, Choose a Picture to upload and click "Add an image to the canvas", New Images will be placed atop older ones.</h2></li>
+    <li><h2>Too add text to the canvas, specify the Font, Font Size, Color, and Decorations then click "Add Text To Canvas", New Text Areas will be placed atop older ones.</h2></li>
+    <li><h2>You may move images and text around the canvas by left clicking and dragging the image.</h2></li>
+    <li><h2>To Resize or Delete images and text, double left click an image or text area to bring up the Scalar Prompt</h2></li>
+    <li><h2>To Save the canvas to a postcard, click "Save Canvas". The Final image will appear below, simply right click and save as image.</h2></li>
+    </ul>
+</div>
+
+<!-- The final image that is created from saving the canvas --> 
+<div>
+    <div id="finalImg"><br/>
+    <img id="canvasImg" >
+    <h3>Your final image will apear here! Right Click and Save Img!</h3>
+    </div>
+</div>
+  
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Included js  --> 
+    <script src="myjs.js"></script>
+    <!-- Easeljs library used for manipulating canvas objects --> 
+    <script src="Libraries/easeljs/easeljs-0.7.1.min.js"></script>
+  </body>
+    
+</html>

@@ -1,0 +1,54 @@
+html,
+body {
+  
+  background-color: #333;
+   
+}
+body {
+  
+    color: black;
+    text-shadow: 0 1px 3px rgba(0,0,0,.5);
+    box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+   
+}
+
+.buttonSpacing {
+    padding: 1px;
+
+
+}
+
+.myButton {<!-- CSS provided by http://www.bestcssbuttongenerator.com/ -->
+
+	background-color:#ededed;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	text-align: left;
+	cursor:pointer;
+	color:#777777;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+
+#finalImg {
+   
+    width: 50%;
+    margin: 0 auto;
+}
+
+#Directions {
+    display: none;
+    padding-left: 15%;
+    
+}
+
+#image {
+    
+    padding-right: 25px;
+}
